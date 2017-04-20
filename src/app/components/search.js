@@ -15,11 +15,7 @@ export default class SearchBar extends Component {
   render() {
     return(
       <div>
-        <input
-         placeholder = 'Search.....'
-         onChange={this.onInputChange}
-         className='searchInput'
-        />
+        <input placeholder='Search.....' onChange={this.onInputChange} className='searchInput' />
       </div>
     )
   }

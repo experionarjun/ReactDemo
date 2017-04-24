@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../styles/main.css'
+// import '../styles/main.css'
 
 export default class SearchBar extends Component {
 
@@ -15,16 +15,16 @@ export default class SearchBar extends Component {
   render() {
     return(
       <div>
-        <input placeholder='Search.....' onChange={this.onInputChange} className='searchInput' />
+        <input placeholder='Search.....' onChange={this.onInputChange} value={this.state.term} className='searchInput' />
       </div>
     )
   }
 
 
-   onInputChange(e){
-    let temp = e.target.value;
-    console.log(temp)
-    this.setState({ term: temp});
+  onInputChange(e){
+    let term = e.target.value;
+    this.setState({term});
+    this.props.onVideoSearch(term);
   }
 
 }

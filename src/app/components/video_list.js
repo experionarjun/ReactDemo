@@ -5,12 +5,6 @@ import VideoListItem from './video_list_item';
 
 export default class VideoList extends Component {
 
-  constructor(props){
-    super(props);
-    this.state = {};
-    console.log('VideoList props',props)
-  }
-
   render(){
 
     return(
@@ -21,8 +15,15 @@ export default class VideoList extends Component {
   }
 
   listVideos(){
+    console.log('VideoList props',this.props)
     let videoList = this.props.videos.map((video)=>{
-      return <VideoListItem video={video} key={video.etag}/>
+      return (
+        <VideoListItem
+          onVideoSelect={this.props.onVideoSelect}
+          video={video}
+          key={video.etag}
+        />
+      )
     })
     return videoList
   }
